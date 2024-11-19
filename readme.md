@@ -61,3 +61,20 @@ Both images will be saved in the current directory with names based on the model
 
 We provide the pre-trained NPNet weights of Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT with [an anonymous link](https://drive.google.com/drive/folders/1Z0wg4HADhpgrztyT3eWijPbJJN5Y2jQt?usp=drive_link)
 
+## Citaion:
+If you find our code useful for your research, please cite our paper.
+
+```
+@misc{zhou2024goldennoisediffusionmodels,
+      title={Golden Noise for Diffusion Models: A Learning Framework}, 
+      author={Zikai Zhou and Shitong Shao and Lichen Bai and Zhiqiang Xu and Bo Han and Zeke Xie},
+      year={2024},
+      eprint={2411.09502},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2411.09502}, 
+}
+```
+
+
+
