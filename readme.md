@@ -61,7 +61,7 @@ Both images will be saved in the current directory with names based on the model
 
 We provide the pre-trained NPNet weights of Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT with [an anonymous link](https://drive.google.com/drive/folders/1Z0wg4HADhpgrztyT3eWijPbJJN5Y2jQt?usp=drive_link)
 
-## Citaion:
+## Citation:
 If you find our code useful for your research, please cite our paper.
 
 ```
