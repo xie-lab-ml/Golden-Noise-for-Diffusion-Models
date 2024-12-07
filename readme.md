@@ -46,7 +46,7 @@ Run the script from the command line by navigating to the directory containing `
 python npnet_pipeline.py --pipeline SDXL --prompt "A banana on the left of an apple." --size 1024
 ```
 
-This command will generate an image based on the prompt "A scenic view of the Himalayas" using the Stable Diffusion XL model with an image size of 1024x1024 pixels.
+This command will generate an image based on the prompt "A banana on the left of an apple." using the Stable Diffusion XL model with an image size of 1024x1024 pixels.
 
 ### Output🎉️ 
 
