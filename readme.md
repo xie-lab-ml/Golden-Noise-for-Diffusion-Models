@@ -8,7 +8,7 @@ Here we provide the inference code which supports different models like ***Stabl
 
 ## Requirements
 
-- `python version == 3.8`
+- `python`
 - `pytorch with cuda version`
 - `diffusers`
 - `PIL`
