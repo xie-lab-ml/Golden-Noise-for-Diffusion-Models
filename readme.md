@@ -1,3 +1,5 @@
+![917475e514344f5dc191117fe584f5b](https://github.com/user-attachments/assets/6ff12a06-03f0-4fa2-856a-4a3f3d22b57e)
+
 # NPNet Pipeline Usage Guide😄 
 
 ## Overview
@@ -5,6 +7,7 @@
 This guide provides instructions on how to use the NPNet, a noise prompt network aims to transform the random Gaussian noise into golden noise, by adding a small desirable perturbation derived from the text prompt to boost the overall quality and semantic faithfulness of the synthesized images.
 
 Here we provide the inference code which supports different models like ***Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT.***
+
 
 ## Requirements
 
