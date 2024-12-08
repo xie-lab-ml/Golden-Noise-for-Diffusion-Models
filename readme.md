@@ -79,15 +79,9 @@ If you find our code useful for your research, please cite our paper.
 ## 🙏 Acknowledgements
 
 We thank the community and contributors for their invaluable support in developing NPNet. 
-We thank @DataCTE for constructing the ComfyUI of NPNet inference code[Demo](https://github.com/DataCTE/ComfyUI_Golden-Noise).
+We thank @DataCTE for constructing the ComfyUI of NPNet inference code [ComfyUI](https://github.com/DataCTE/ComfyUI_Golden-Noise).
 
 ---
-
-<p align="center">
-  <a href="https://star-history.com/#viiika/Meissonic&Date">
-    <img src="https://api.star-history.com/svg?repos=viiika/Meissonic&type=Date" alt="Star History Chart">
-  </a>
-</p>
 
 
 
