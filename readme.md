@@ -83,6 +83,7 @@ If you find our code useful for your research, please cite our paper.
 
 We thank the community and contributors for their invaluable support in developing NPNet. 
 We thank @DataCTE for constructing the ComfyUI of NPNet inference code [ComfyUI](https://github.com/DataCTE/ComfyUI_Golden-Noise).
+We thank @asagi4 for constructing the ComfyUI of NPNet inference code [ComfyUI](https://github.com/asagi4/ComfyUI-NPNet).
 
 ---
 
