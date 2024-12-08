@@ -8,7 +8,7 @@ Here we provide the inference code which supports different models like ***Stabl
 
 ## Requirements
 
-- `python`
+- `python >= 3.8.0`
 - `pytorch with cuda version`
 - `diffusers`
 - `PIL`
@@ -75,6 +75,20 @@ If you find our code useful for your research, please cite our paper.
       url={https://arxiv.org/abs/2411.09502}, 
 }
 ```
+
+## 🙏 Acknowledgements
+
+We thank the community and contributors for their invaluable support in developing NPNet. 
+We thank @DataCTE for constructing the ComfyUI of NPNet inference code[Demo](https://github.com/DataCTE/ComfyUI_Golden-Noise).
+
+---
+
+<p align="center">
+  <a href="https://star-history.com/#viiika/Meissonic&Date">
+    <img src="https://api.star-history.com/svg?repos=viiika/Meissonic&type=Date" alt="Star History Chart">
+  </a>
+</p>
+
 
 
 
