@@ -1,4 +1,7 @@
-![917475e514344f5dc191117fe584f5b](https://github.com/user-attachments/assets/6ff12a06-03f0-4fa2-856a-4a3f3d22b57e)
+# Golden Noise for Diffusion Models: A Learning Framework
+
+[![arXiv](https://img.shields.io/badge/arXiv-2411.09502-b31b1b.svg)](https://arxiv.org/abs/2411.09502)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Huggingface-Model_GoldenNoiseModel)](https://huggingface.co/Klayand/GoldenNoiseModel)
 
 # NPNet Pipeline Usage Guide😄 
 
