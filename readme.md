@@ -18,6 +18,7 @@ This guide provides instructions on how to use the NPNet, a noise prompt network
 
 Here we provide the inference code which supports different models like ***Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT.***
 
+### We will quickly release the NPNet checkpoint of Pixelart-Sigma, SD3, SD3.5 and FLUX !!! 😄 😄 😄 
 
 ### Requirements
 
