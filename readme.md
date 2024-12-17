@@ -16,7 +16,12 @@
 
 This guide provides instructions on how to use the NPNet, a noise prompt network aims to transform the random Gaussian noise into golden noise, by adding a small desirable perturbation derived from the text prompt to boost the overall quality and semantic faithfulness of the synthesized images.
 
-Here we provide the inference code which supports different models like ***Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT.***
+Here we provide the inference code which supports different models like ***Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT.***. 
+
+Besides, you can apply the checkpoint of NPNet on SDXL to the models like ***SDXL-Lightning, LCM, and PCM***. The visualizations of these three models are shown below:
+
+![lcm](https://github.com/user-attachments/assets/26d10388-d72d-41f3-b951-1a89a4ca77e0)
+
 
 ### We will quickly release the NPNet checkpoint of Pixelart-Sigma, SD3, SD3.5 and FLUX !!! 😄 😄 😄 
 
