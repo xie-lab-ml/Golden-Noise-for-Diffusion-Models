@@ -18,7 +18,7 @@ This guide provides instructions on how to use the NPNet, a noise prompt network
 
 Here we provide the inference code which supports different models like ***Stable Diffusion XL, DreamShaper-xl-v2-turbo, and Hunyuan-DiT.***. 
 
-Besides, you can apply the checkpoint of NPNet on SDXL to the models like ***SDXL-Lightning, LCM, and PCM***. The visualizations of these three models are shown below:
+Besides, you can apply the checkpoint of NPNet on SDXL to the models like ***SDXL-Lightning, LCM, DMD, DMDv2 and PCM***. The visualizations of these three models are shown below:
 
 ![lcm](https://github.com/user-attachments/assets/26d10388-d72d-41f3-b951-1a89a4ca77e0)
 
