@@ -24,6 +24,16 @@ Besides, you can apply the checkpoint of NPNet on SDXL to the models like ***SDX
 
 We **directly use the checkpoint from SDXL** to ***SDXL-Lightning, LCM, and PCM***, and evaluate them on Geneval dataset:
 
+| Model           | Method    | PickScore↑   | HPSv2↑    | AES↑   | ImageReward↑     | CLIPScore↑ |
+|-----------------|-----------|---------|----------|---------|----------|---------|
+| SDXL-Lightning(4-step)  | standard  | 22.85 | 29.12 | 5.65 | 59.02 | 0.8093 |
+| SDXL-Lightning(4-step)  | ours      | **23.03** | **29.71** | **5.71** | **72.67** | **0.8150** |
+| LCM(4-step)             | standard  | 22.30 | 26.52 | 5.49 | 33.21 | 0.8050 |
+| LCM(4-step)             | ours      | **22.38** | **26.83** | **5.55** | **37.08** | **0.8123** |
+| PCM(8-step)             | standard  | 22.05 | 26.98  | 5.52 | 23.28 | 0.8031 |
+| PCM(8-step)             | ours      | **22.22** | **27.59**  | **5.56** | **35.01** | **0.8175** |
+
+
 The results demonstrate the effectiveness of our NPNet on few-steps image generation.
 
 ### Requirements
