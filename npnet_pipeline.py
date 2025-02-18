@@ -46,7 +46,7 @@ class NPNet(nn.Module):
                   gloden_unet = torch.load(self.pretrained_path)
                   unet_svd.load_state_dict(gloden_unet["unet_svd"])
                   unet_embedding.load_state_dict(gloden_unet["unet_embedding"])
-                  text_embedding.load_state_dict(gloden_unet["embeeding"])
+                  text_embedding.load_state_dict(gloden_unet["embedding"])
                   _alpha = gloden_unet["alpha"]
                   _beta = gloden_unet["beta"]
 
