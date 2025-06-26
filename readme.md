@@ -97,7 +97,7 @@ If you find our code useful for your research, please cite our paper.
 ```
 @inproceedings{zhou2025golden,
       title={Golden Noise for Diffusion Models: A Learning Framework}, 
-      author={Zikai Zhou and Shitong Shao and Lichen Bai and Zhiqiang Xu and Bo Han and Zeke Xie},
+      author={Zikai Zhou and Shitong Shao and Lichen Bai and Shufei Zhang and Zhiqiang Xu and Bo Han and Zeke Xie},
       booktitle={International Conference on Computer Vision},
       year={2025},
 }
