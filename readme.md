@@ -85,7 +85,8 @@ To prepare training data, use the script `training/dataset_collection.py`. This 
 
 
 > **Notice:**
-> Some folders cannot be directly downloaded from GitHub due to repository file size and policy restrictions. We provide external download links for these resources. **Please download them manually and place them in the `training` directory as instructed.**
+> Some folders cannot be directly downloaded from GitHub due to repository file size and policy restrictions. We provide external download links for these resources. **Please download them manually and place them in the `training` directory as instructed.** 
+> Download Link: [google drive](https://drive.google.com/drive/folders/1Z0wg4HADhpgrztyT3eWijPbJJN5Y2jQt?usp=drive_link)
 
 
 Training scripts are located in the `training/` directory.
