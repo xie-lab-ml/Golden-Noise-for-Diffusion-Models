@@ -83,6 +83,11 @@ To prepare training data, use the script `training/dataset_collection.py`. This 
 
 ## Training Usage
 
+
+> **Notice:**
+> Some folders cannot be directly downloaded from GitHub due to repository file size and policy restrictions. We provide external download links for these resources. **Please download them manually and place them in the `training` directory as instructed.**
+
+
 Training scripts are located in the `training/` directory.
 
 ### Main Scripts
