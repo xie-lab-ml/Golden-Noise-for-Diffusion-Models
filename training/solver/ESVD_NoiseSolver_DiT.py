@@ -29,7 +29,7 @@ from utils.utils import infer_example
 from model import NoiseUnet, SVDNoiseUnet
 from reward_model.eval_pickscore import PickScore
 from diffusers.models.normalization import AdaGroupNorm
-from utils.pipeline_stable_diffusion_xl_copy import StableDiffusionXLPipeline
+from utils.pipeline_stable_diffusion_xl import StableDiffusionXLPipeline
 
 __all__ = ['SVD_Embedding_Solver_DiT']
 

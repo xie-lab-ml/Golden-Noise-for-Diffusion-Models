@@ -26,7 +26,6 @@ from utils.pipeline_stable_diffusion_xl import StableDiffusionXLPipeline
 import torch.distributed as dist
 from reward_model.eval_pickscore import PickScore
 
-from single_lisa import LISADiffusion
 from diffusers.models.normalization import AdaGroupNorm
 from model import SVDNoiseUnet
 

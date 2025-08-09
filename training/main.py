@@ -18,16 +18,10 @@ from torch.nn import functional as F
 from torch.utils.tensorboard import SummaryWriter
 from torch.nn.parallel import DistributedDataParallel as DDP
 
-from language.t5 import T5Embedder
 from solver import solver_dict
 from noise_dataset import NoiseDataset
 from reward_model.eval_pickscore import PickScore
-from utils.pipeline_stable_diffusion_xl_copy import StableDiffusionXLPipeline
-from utils.pipeline_stable_diffusion_21 import StableDiffusionPipeline
-from utils.pipeline_hunyuan import HunyuanDiTPipeline
-from utils.pipeline_pixel_sigma import PixArtSigmaPipeline
-from utils.pipeline_stable_diffusion_3 import StableDiffusion3Pipeline
-from utils.pipeline_flux import FluxPipeline
+from utils.pipeline_stable_diffusion_xl import StableDiffusionXLPipeline
 
 DEVICE = torch.device("cuda" if torch.cuda else "cpu")
 
@@ -67,7 +61,7 @@ def get_args():
     parser.add_argument("--epochs", default=30, type=int)  # more iterations, less epochs ==> 3
     parser.add_argument("--batch-size", default=64, type=int) # verify ESVD, SVD, EUnet with prompt[0]  
     parser.add_argument("--num-workers", default=16, type=int)
-    parser.add_argument("--metric-version", default='PickScore', choices=['PickScore', 'HPS v2', 'AES', 'ImageReward'],
+    parser.add_argument("--metric-version", default='PickScore', choices=['PickScore', 'HPSv2', 'AES', 'ImageReward'],
                         type=str)
 
     # path configuration
@@ -78,9 +72,9 @@ def get_args():
                         default="./datasets/noise_pairs_SDXL_10_pick_total/",
                         type=str)
     parser.add_argument('--pretrained-path', type=str,
-                        default='./checkpoints/SDXL-10')
+                        default='./training/checkpoints')
     parser.add_argument('--save-ckpt-path', type=str,
-                        default='./checkpoints/SDXL-10/svd_unet+unet')
+                        default='./training/checkpoints/SDXL-10/svd_unet+unet')
 
     # discard the bad samples
     parser.add_argument("--discard", default=False, type=bool)
@@ -98,6 +92,14 @@ def get_args():
 if __name__ == '__main__':
     dtype = torch.float16
     args = get_args()
+
+    # Ensure required directories exist (pretrained and checkpoint)
+    # Note: If a file path is passed instead, please pass its directory path.
+    if isinstance(args.pretrained_path, str):
+        os.makedirs(args.pretrained_path, exist_ok=True)
+    if isinstance(args.save_ckpt_path, str):
+        dir_name = args.save_ckpt_path.split('/')[-2]
+        os.makedirs(f'./training/checkpoints/{dir_name}', exist_ok=True)
 
     if args.ddp:
         dist.init_process_group(backend='nccl')
@@ -154,7 +156,6 @@ if __name__ == '__main__':
             discard=args.discard,
             pick=args.pick,
             all_file=args.all_file,
-            evaluate=args.evaluate,
             data_dir=args.data_dir,
             prompt_path=args.prompt_path)
 

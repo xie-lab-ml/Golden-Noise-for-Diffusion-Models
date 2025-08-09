@@ -3,7 +3,7 @@ import numpy as np
 
 from torch.utils.data import DataLoader, Dataset
 
-from utils import load_prompt, load_pick_prompt, load_pick_discard_prompt
+from utils.utils import load_prompt, load_pick_prompt, load_pick_discard_prompt
 
 
 class NoiseDataset(Dataset):

@@ -1,8 +1,9 @@
 from .ESVD_NoiseSolver import SVD_Embedding_Solver
 from .EUnet_NoiseSolver import Embedding_Solver
 from .Unet_NoiseSolver import Unet_Solver
-from .VIT_NoiseSolver import Vit_Solver
 from .SVD_NoiseSolver import SVD_Solver
+from .VIT_NoiseSolver import Vit_Solver
+
 
 from .ESVD_NoiseSolver_DiT import SVD_Embedding_Solver_DiT
 

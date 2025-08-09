@@ -14,7 +14,7 @@
 
 - [x] Uploaded inference code and corresponding model weights.
 - [x] Uploaded data collection, model training, and evaluation code.
-- [ ] Upload the latest version of the paper.
+- [x] Upload the latest version of the paper.
 - [ ] Check for hidden bugs in the codebase.
 
 ## Preliminaries
@@ -134,9 +134,62 @@ python training/main.py --pipeline=SDXL --model=svd_unet+unet --train=True --pic
 - `--metric-version`: Metric for evaluation. Options: 'PickScore', 'HPS v2', 'AES', 'ImageReward'. Default: 'PickScore'.
 - `--prompt-path`: Path to the prompt JSON file for training. Default: './sdxl_step_10_training_seed.json'.
 - `--data-dir`: Directory containing the training data (noise pairs). Default: './datasets/noise_pairs_SDXL_10_pick_total/'.
-- `--pretrained-path`: Path to pretrained model weights. Default: './checkpoints/SDXL-10'.
-- `--save-ckpt-path`: Path to save model checkpoints. Default: './checkpoints/SDXL-10/svd_unet+unet'.
+- `--pretrained-path`: Path to pretrained model weights. Default: './training/checkpoints'.
+- `--save-ckpt-path`: Path to save model checkpoints. Default: './training/checkpoints/SDXL-10/svd_unet+unet'.
 - `--discard`: Whether to discard bad samples during training. Default: False.
+
+
+### Important Setup (Metrics and Reward Models)
+
+1) Download the `metric` and `reward_model` folders from Google Drive and place them under the `training/` directory.
+
+- Download link: [google drive](https://drive.google.com/drive/folders/1Z0wg4HADhpgrztyT3eWijPbJJN5Y2jQt?usp=drive_link)
+- Final layout example:
+
+```
+training/
+  metric/
+  reward_model/
+  utils/
+  solver/
+  ...
+```
+
+
+### Data Collection Details (dataset_collection.py)
+
+- The script will create a JSONL file that records each `prompt` and its corresponding `random_seed`. This JSONL will be used later by `main.py` during training as `--prompt-path`.
+- Saved data (.npz) will contain the paired latents/noise as defined in the code. You can edit `cal_score` to collect more metrics. The storage structure follows the logic in the code.
+
+Multi-GPU data collection and index management:
+- If different GPUs generate different index ranges, adjust the sample index to avoid collisions.
+- Example:
+  - GPU 0 generates indices [0, 10000): do not change `idx`.
+  - GPU 1 generates indices [10000, 20000): set `idx = idx + 10000` before saving.
+- After collection, merge all JSONL files into a single file for training. The `.npz` files do not require merging or further processing.
+
+
+### Model Training Guide (main.py)
+
+- Recommended baseline: `--model=svd_unet+unet`.
+- Use `--pick True` as the typical setting. To filter bad samples, add `--discard True`. The filtering logic is implemented in `training/utils/utils.py` via `load_pick_discard_prompt`; modify it if needed.
+- If you have multiple `.npz` folders, set `--all-file True`; otherwise keep it `False`.
+- Set `--prompt-path` to the JSONL created by `dataset_collection.py` (if you produced multiple JSONLs, merge them into one file first).
+
+Example command:
+
+```bash
+python training/main.py \
+  --pipeline SDXL \
+  --model svd_unet+unet \
+  --pick True \
+  --discard True \
+  --all-file True \
+  --prompt-path ./training/SDXL_step_10_training.json \
+  --data-dir ./training/datasets/noise_pairs_SDXL_10_pick_total/ \
+  --epochs 30 \
+  --batch-size 64
+```
 
 
 ### Example: Evaluate the model performance
@@ -163,7 +216,7 @@ images/
 
 **Example command:**
 ```bash
-python training/metric/cal_metric.py --prompt_file data/your_prompts.csv --image_folder images/ --metric PickScore
+python training/metric/cal_metric.py --prompt_file data/your_prompts_file --image_folder images/ --metric PickScore
 ```
 
 Replace `--metric` with your desired evaluation metric and adjust paths as needed.

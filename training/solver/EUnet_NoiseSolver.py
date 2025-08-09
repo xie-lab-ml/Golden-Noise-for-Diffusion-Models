@@ -25,7 +25,6 @@ import accelerate
 from model import NoiseUnet
 from reward_model.eval_pickscore import PickScore
 from utils.pipeline_stable_diffusion_xl import StableDiffusionXLPipeline
-from single_lisa import LISADiffusion
 from diffusers.models.normalization import AdaGroupNorm
 
 __all__ = ['Embedding_Solver']
