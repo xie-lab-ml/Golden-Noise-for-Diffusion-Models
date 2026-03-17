@@ -176,7 +176,7 @@ if __name__ == '__main__':
     )
 
     # mkdir
-    base_dir = 'datasets/Output_test'
+    base_dir = 'datasets'
     if not os.path.exists(base_dir):
         os.mkdir(base_dir)
     if not os.path.exists(os.path.join(base_dir,'origin')):
